@@ -1,0 +1,41 @@
+<div class="valentines-day-card">
+    <input id="open" type="checkbox" >
+    <label class="open" for="open" [class.clicked]="cardFrontClicked" (click)="toggleCardFront()"></label>
+    <div class="card-front">
+        <div class="note">
+            <span>Hi Krystin :)</span>
+            <span>Click me!</span>
+        </div>
+    </div> 
+    <div class="card-inside" >
+        <div class="card-text" [class.fade]="fadeCardText">
+            <div class="text-one" [class.swap]="swapTextColor">{{textOne}}</div>
+            <div class="text-two" [class.swap]="swapTextColor">{{textTwo}}</div>
+            <div class="text-three" [class.swap]="swapTextColor">{{textThree}}</div>
+        </div>    
+        <div class="card-heart" (click)="onClickHeart()"></div>
+        <div class="smile" (click)="onClickHeart()"></div>
+        <div class="eyes" (click)="onClickHeart()"></div>
+    </div>
+
+</div>
+
+<div class="container" (click)="onClick()" [class.hidden]="isHidden">  
+    <div class="valentines">
+        <div class="envelope" ></div>
+        <div class="front"></div>
+        <div class="card" [class.clicked]="isClicked">
+        <div class="text">Will you be my girlfriend? :)</div>
+        <div class="heart"></div>
+        </div>
+        <div class="hearts">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+            <div class="four"></div>
+            <div class="five"></div>
+        </div>
+    </div>
+</div>
+<div class="shadow" [class.hidden]="isHidden"></div>
+
