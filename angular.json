@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "docs",
+            "outputPath": "dist/smiley-face",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -35,12 +35,10 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb"
-
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb"
-  
                 }
               ],
               "outputHashing": "all"
@@ -88,6 +86,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
