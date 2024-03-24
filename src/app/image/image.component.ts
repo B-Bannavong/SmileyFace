@@ -30,14 +30,14 @@ export class ImageComponent {
     "so much my face",
     "care about you",
     "absolutely smoke you",
-    "really cringe...",
+    "really cringe",
 
   ];
   textThreeList: string[] = [
     "hurts...",
     "a lot...",
     "at pool...",
-    ""
+    "but..."
   ];
 
   textOne: string = "Sometimes just thinking";
