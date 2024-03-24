@@ -195,7 +195,7 @@ input#open {
     top:180px;
     left:120px;
     transform: rotate(-45deg);
-    animation: .8s beat infinite;
+    animation: 2s beat infinite;
   }
     
   .card-heart:before, .card-heart:after {
@@ -254,26 +254,6 @@ input#open {
     animation: close 2s infinite;
   }
   
-  @keyframes close {
-      0%, 100% {
-          transform: scale(1, .05);
-      }
-      5%, 95% {
-          transform: scale(1, 1);
-      }
-  }
-  
-  @keyframes beat {
-    0%, 40%, 100% {
-      transform: scale(1) rotate(-45deg);
-    }
-    25%, 60% {
-      transform: scale(1.1) rotate(-45deg);
-    }
-  }
-
-
-
 body {
     height: 100vh;
     display: flex;
@@ -426,22 +406,7 @@ body {
   .shadow.hidden{
     display:none;
   }
-  @keyframes up {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-30px);
-    }
-  }
-  @keyframes scale {
-    0%, 100% {
-      transform: scaleX(1);
-    }
-    50% {
-      transform: scaleX(0.85);
-    }
-  }
+
   .hearts {
     position: relative;
     margin-bottom: 200px;
@@ -513,7 +478,39 @@ body {
       opacity: 0.5;
     }
   }
+  @keyframes up {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+  }
+  @keyframes scale {
+    0%, 100% {
+      transform: scaleX(1);
+    }
+    50% {
+      transform: scaleX(0.85);
+    }
+  }
+  @keyframes close {
+    0%, 100% {
+        transform: scale(1, .05);
+    }
+    5%, 95% {
+        transform: scale(1, 1);
+    }
+}
 
+@keyframes beat {
+  0%, 40%, 100% {
+    transform: scale(1) rotate(-45deg);
+  }
+  25%, 60% {
+    transform: scale(1.1) rotate(-45deg);
+  }
+}
   @media only screen and (min-width: 600px) and (min-height: 600px) {
     .heart-card{
         margin-left:45%;
