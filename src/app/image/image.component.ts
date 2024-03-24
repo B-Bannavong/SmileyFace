@@ -6,7 +6,8 @@ import { Component} from '@angular/core';
   selector: 'app-image',
   templateUrl: './image.component.html',
   styleUrls: ['./image.component.css'],
-  imports:[CommonModule]
+  imports:[CommonModule],
+  providers:[Window]
 })
 export class ImageComponent {
   isHidden: boolean = true;
@@ -24,14 +25,13 @@ export class ImageComponent {
     "I",
     "And it's really fun to",
     "Sorry if this is",
-    "...but I want"
   ];
   textTwoList: string[] = [
     "so much my face",
     "care about you",
     "absolutely smoke you",
     "really cringe...",
-    "to ask you something..."
+
   ];
   textThreeList: string[] = [
     "hurts...",
@@ -46,6 +46,8 @@ export class ImageComponent {
 
  
 
+  constructor() { }
+
   onClick() {
   
     this.clickCountLoop++;
@@ -55,16 +57,17 @@ export class ImageComponent {
     if(this.clickCountLoop > 2){
       this.cardFrontClicked = !this.cardFrontClicked;
       this.isHidden = !this.isHidden;
+      this.clickCount = 0;
+      this.doubleClickCount = 0;
+      this.clickCountLoop = 0;
     }
-    console.log("HERE");
   }
   onClickHeart(){
-    if(this.clickCount > 8){
+    if(this.clickCount > 6){
       this.toggleCardOpen();
     }
     this.fadeCardText = !this.fadeCardText;
     this.clickCount++;
-    console.log("Click Count Heart:" + this.clickCount);
     setTimeout(() => {
       if(this.clickCount % 2 == 0){
         this.textOne = this.textOneList[this.doubleClickCount];
@@ -83,17 +86,14 @@ export class ImageComponent {
     this.textThree = "pound through my chest...";
   }
   toggleCardFront(){
-    if(this.clickCount == 10){
+    if(this.clickCount == 8){
       if(this.clickCountLoop < 3){
         this.cardFrontClicked = !this.cardFrontClicked;
         this.isHidden = !this.isHidden;
         this.toggleCardOpen();
-
       }
 
     }
-    console.log("Click Count Front:" + this.clickCount);
-
   }
 
 

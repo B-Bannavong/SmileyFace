@@ -9,7 +9,8 @@ import { CommonModule } from '@angular/common';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, ImageComponent, CommonModule]
+    imports: [RouterOutlet, ImageComponent, CommonModule],
+    providers:[Window]
 })
 export class AppComponent {
   title = 'SmileyFace';
