@@ -13,6 +13,11 @@ input#open {
       transform: perspective(2500px);
     transition: .3s;
     font-family: 'Brush Script MT', cursive;
+    transition: top 1s ease;
+  }
+  .valentines-day-card.clicked{
+    top:-500px;
+    transition: top 1s ease;
   }
   
   .card-front {
@@ -44,18 +49,6 @@ input#open {
     left:0;
     top:0;
     box-shadow: inset 100px 20px 100px rgba(0,0,0,0.22), 100px 20px 100px rgba(0,0,0,0.1);
-  }
-
-  .card-inside-two{
-    position: absolute;
-    background-color: #fff0f3;
-    width: 300px;
-    height:300px;
-    z-index:-1;
-    left:0;
-    top:0;
-    box-shadow: inset 100px 20px 100px rgba(0,0,0,0.22), 100px 20px 100px rgba(0,0,0,0.1);
-    display:none;
   }
   
   .open {
@@ -290,12 +283,15 @@ body {
     font-family: 'Brush Script MT', cursive;
   }
   .container {
+    z-index: -10;
     top:300px;
     margin-left:67px;
-    position: relative;
+    position: fixed;
+    transition: opacity 1s ease;
+    opacity: 1;
   }
   .container.hidden{
-    display:none;
+    opacity: 0;
   }
   .valentines {
   
@@ -355,8 +351,8 @@ body {
     font-size: 28px;
     text-align: center;
     line-height:25px;
-    top:19px;
-    left:5px;
+    top:25px;
+    left:15px;
     color: #003049;
   }
   

@@ -11,40 +11,60 @@ import { Component} from '@angular/core';
 export class ImageComponent {
   isHidden: boolean = true;
   isClicked: boolean = false;
+  cardOpenClicked: boolean = false;
   cardFrontClicked: boolean = false;
   fadeCardText: boolean = true;
   swapTextColor: boolean = false;
   clickCount = 0;
+  clickCountLoop = 0;
   doubleClickCount = 0;
   
   textOneList: string[] = [
-    "It's impossible to",
-    "You're on my",
-    "I"
+    "You make me smile",
+    "I",
+    "And it's really fun to",
+    "Sorry if this is",
+    "...but I want"
   ];
   textTwoList: string[] = [
-    "not smile whenever I",
-    "mind every day...",
-    "care about you"
+    "so much my face",
+    "care about you",
+    "absolutely smoke you",
+    "really cringe...",
+    "to ask you something..."
   ];
   textThreeList: string[] = [
-    "think about you...",
-    "",
-    "a lot..."
+    "hurts...",
+    "a lot...",
+    "at pool...",
+    ""
   ];
 
-  textOne: string = "Being around you still";
-  textTwo: string = "makes my heart pound";
-  textThree: string = "through my chest...";
+  textOne: string = "Sometimes just thinking";
+  textTwo: string = "about you makes my heart ";
+  textThree: string = "pound through my chest...";
 
  
 
   onClick() {
-    this.isClicked = !this.isClicked;
+  
+    this.clickCountLoop++;
+    if(this.clickCountLoop <= 2){
+      this.isClicked = !this.isClicked;
+    }
+    if(this.clickCountLoop > 2){
+      this.cardFrontClicked = !this.cardFrontClicked;
+      this.isHidden = !this.isHidden;
+    }
+    console.log("HERE");
   }
   onClickHeart(){
+    if(this.clickCount > 8){
+      this.toggleCardOpen();
+    }
     this.fadeCardText = !this.fadeCardText;
     this.clickCount++;
+    console.log("Click Count Heart:" + this.clickCount);
     setTimeout(() => {
       if(this.clickCount % 2 == 0){
         this.textOne = this.textOneList[this.doubleClickCount];
@@ -54,13 +74,26 @@ export class ImageComponent {
         this.swapTextColor = !this.swapTextColor;
         console.log(this.swapTextColor);
       }
- 
     }, 50);
-  
-
+  }
+  toggleCardOpen(){
+    this.cardOpenClicked = !this.cardOpenClicked;
+    this.textOne = "Sometimes just thinking";
+    this.textTwo = "about you makes my heart ";
+    this.textThree = "pound through my chest...";
   }
   toggleCardFront(){
-    this.cardFrontClicked = !this.cardFrontClicked;
+    if(this.clickCount == 10){
+      if(this.clickCountLoop < 3){
+        this.cardFrontClicked = !this.cardFrontClicked;
+        this.isHidden = !this.isHidden;
+        this.toggleCardOpen();
+
+      }
+
+    }
+    console.log("Click Count Front:" + this.clickCount);
+
   }
 
 

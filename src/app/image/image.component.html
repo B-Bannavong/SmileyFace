@@ -1,8 +1,8 @@
-<div class="valentines-day-card">
+<div class="valentines-day-card" [class.clicked]="cardFrontClicked" >
     <input id="open" type="checkbox" >
-    <label class="open" for="open" [class.clicked]="cardFrontClicked" (click)="toggleCardFront()"></label>
-    <div class="card-front">
-        <div class="note">
+    <label class="open" for="open" [class.clicked]="cardOpenClicked" (click)="toggleCardOpen()"></label>
+    <div class="card-front" >
+        <div class="note" (click)="toggleCardFront()">
             <span>Hi Krystin :)</span>
             <span>Click me!</span>
         </div>
@@ -25,7 +25,9 @@
         <div class="envelope" ></div>
         <div class="front"></div>
         <div class="card" [class.clicked]="isClicked">
-        <div class="text">Will you be my girlfriend? :)</div>
+        <div class="text">
+            Will you be 
+            my girlfriend?</div>
         <div class="heart"></div>
         </div>
         <div class="hearts">
