@@ -80,7 +80,32 @@ input#open {
     box-shadow: inset 100px 20px 100px rgba(0,0,0,.1), 30px 0 50px rgba(0,0,0,0.1);
   }
 
-  /* .note {
+  .open-2{
+    position: absolute;
+    width: 300px;
+    height:300px;
+    left:0;
+    top:0;
+    background-color: transparent;
+    z-index:4;
+    cursor: pointer;
+  }
+  #open-2:checked ~ .card-inside {
+    transform: rotateY(-155deg);
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.13), 30px 0 50px rgba(0,0,0,0.1);
+  }
+  
+  #open2-:checked ~ .card-inside:before {
+    z-index:3;
+    background-color: #000000;
+    width:300px;
+    height:300px;
+    top:0;
+    left:0;
+    box-shadow: inset 50px 20px 100px rgba(0,0,0,.1), 30px 0 50px rgba(0,0,0,0.1);
+  }
+
+  .note {
     position: relative;
     width: 200px;
     height: 150px;
@@ -117,9 +142,9 @@ input#open {
     top:-35px;
     left:65px;
     box-shadow:30px 0 #ba1c1c;
-  } */
+  }
 
-  /* .card-text{
+  .card-text{
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
   }
@@ -159,7 +184,7 @@ input#open {
   }
   .text-three.swap{
     color: #d04e4e;
-  } */
+  }
   
   
   .card-heart {
@@ -237,7 +262,7 @@ body {
     background-color: #f2acac;
     font-family: 'Brush Script MT', cursive;
   }
-  /* .container {
+  .container {
     z-index: -10;
     top:300px;
     margin-left:67px;
@@ -247,8 +272,8 @@ body {
   }
   .container.hidden{
     opacity: 0;
-  } */
-  /* .valentines {
+  }
+  .valentines {
   
     position: relative;
     top:50px;
@@ -272,9 +297,9 @@ body {
     top:-105px;
     left:44px;
     border-radius:30px 0 0 0;
-  } */
+  }
   
-  /* .card {
+  .card {
     transition: top 1s ease;
     position: absolute;
     background-color: #eae2b7;
@@ -298,9 +323,9 @@ body {
     heighT: 140px;
     left:12px;
     top:12px;
-  } */
+  }
   
-  /* .text {
+  .text {
     position: absolute;
     font-family: 'Brush Script MT', cursive;
     font-size: 28px;
@@ -312,8 +337,8 @@ body {
     display: flex;
     flex-direction: column;
   }
-   */
-  /* .heart {
+  
+  .heart {
     background-color: #d62828;
     display: inline-block;
     height: 30px;
@@ -343,8 +368,8 @@ body {
   .heart:after {
     left: 15px;
     top: 0;
-  } */
-  /* .front {
+  }
+  .front {
     position: absolute;
     border-right: 180px solid #f4978e;
     border-top: 95px solid transparent;
@@ -468,7 +493,7 @@ body {
     50% {
       transform: scaleX(0.85);
     }
-  } */
+  }
   @keyframes close {
     0%, 100% {
         transform: scale(1, .05);
