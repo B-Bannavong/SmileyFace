@@ -1,5 +1,5 @@
 <div class="heart-card" [class.clicked]="cardFrontClicked" >
-    <input id="open" type="checkbox" >
+    <input id="open" type="checkbox" [(ngModel)]="isChecked" >
     <label class="open" for="open" [class.clicked]="cardOpenClicked" (click)="toggleCardOpen()"></label>
     <div class="card-front" >
         <div class="note" (click)="toggleCardFront()">
@@ -21,7 +21,7 @@
 </div>
 
 <div class="container" (click)="onClick()" [class.hidden]="isHidden">  
-    <div class="valentines">
+    <div class="package">
         <div class="envelope" ></div>
         <div class="front"></div>
         <div class="card" [class.clicked]="isClicked">

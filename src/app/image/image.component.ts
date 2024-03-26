@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component} from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   standalone: true,
   selector: 'app-image',
   templateUrl: './image.component.html',
   styleUrls: ['./image.component.css'],
-  imports:[CommonModule],
+  imports:[CommonModule, FormsModule],
   providers:[Window]
 })
 export class ImageComponent {
@@ -16,26 +17,30 @@ export class ImageComponent {
   cardFrontClicked: boolean = false;
   fadeCardText: boolean = true;
   swapTextColor: boolean = false;
+  isChecked: boolean = false;
   clickCount = 0;
   clickCountLoop = 0;
   doubleClickCount = 0;
   
   textOneList: string[] = [
     "You make me smile",
-    "I",
+    "I'm constantly",
+    "I can't get enough",
     "And it's really fun to",
     "Sorry if this is",
   ];
   textTwoList: string[] = [
     "so much my face",
-    "care about you",
+    "looking forward to the",
+    "of you...",
     "absolutely smoke you",
     "really cringe",
 
   ];
   textThreeList: string[] = [
     "hurts...",
-    "a lot...",
+    "next time I can see you...",
+    "",
     "at pool...",
     "but..."
   ];
@@ -49,7 +54,6 @@ export class ImageComponent {
   constructor() { }
 
   onClick() {
-  
     this.clickCountLoop++;
     if(this.clickCountLoop <= 2){
       this.isClicked = !this.isClicked;
@@ -60,11 +64,18 @@ export class ImageComponent {
       this.clickCount = 0;
       this.doubleClickCount = 0;
       this.clickCountLoop = 0;
+      this.fadeCardText = !this.fadeCardText;
+      this.isChecked = false;
+      this.cardOpenClicked = !this.cardOpenClicked;
+      this.textOne = "Sometimes just thinking";
+      this.textTwo = "about you makes my heart ";
+      this.textThree = "pound through my chest...";
+
     }
   }
   onClickHeart(){
-    if(this.clickCount > 6){
-      this.toggleCardOpen();
+    if(this.clickCount == 10){
+      this.toggleCardFront();
     }
     this.fadeCardText = !this.fadeCardText;
     this.clickCount++;
@@ -75,22 +86,18 @@ export class ImageComponent {
         this.textThree = this.textThreeList[this.doubleClickCount];
         this.doubleClickCount++;
         this.swapTextColor = !this.swapTextColor;
-        console.log(this.swapTextColor);
       }
     }, 50);
   }
   toggleCardOpen(){
     this.cardOpenClicked = !this.cardOpenClicked;
-    this.textOne = "Sometimes just thinking";
-    this.textTwo = "about you makes my heart ";
-    this.textThree = "pound through my chest...";
   }
   toggleCardFront(){
-    if(this.clickCount == 8){
+    if(this.clickCount == 10){
       if(this.clickCountLoop < 3){
         this.cardFrontClicked = !this.cardFrontClicked;
         this.isHidden = !this.isHidden;
-        this.toggleCardOpen();
+        
       }
 
     }
