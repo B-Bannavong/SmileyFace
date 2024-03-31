@@ -25,22 +25,26 @@ export class ImageComponent {
   textOneList: string[] = [
     "You make me smile",
     "I'm constantly",
-    "I can't get enough",
-    "And it's really fun to",
+    "You're the most beautiful",
+    "And I can't",
+    "Also it's really fun",
     "Sorry if this is",
+    
   ];
   textTwoList: string[] = [
     "so much my face",
     "looking forward to the",
-    "of you...",
-    "absolutely smoke you",
+    "and interesting girl",
+    "get enough",
+    "to absolutely smoke you",
     "really cringe",
 
   ];
   textThreeList: string[] = [
     "hurts...",
     "next time I can see you...",
-    "",
+    "I've ever met...",
+    "of you...",
     "at pool...",
     "but..."
   ];
@@ -74,7 +78,7 @@ export class ImageComponent {
     }
   }
   onClickHeart(){
-    if(this.clickCount == 10){
+    if(this.clickCount == 12){
       this.toggleCardFront();
     }
     this.fadeCardText = !this.fadeCardText;
@@ -93,7 +97,7 @@ export class ImageComponent {
     this.cardOpenClicked = !this.cardOpenClicked;
   }
   toggleCardFront(){
-    if(this.clickCount == 10){
+    if(this.clickCount == 12){
       if(this.clickCountLoop < 3){
         this.cardFrontClicked = !this.cardFrontClicked;
         this.isHidden = !this.isHidden;
