@@ -37,7 +37,7 @@ export class ImageComponent {
     "and interesting girl",
     "get enough",
     "to absolutely smoke you",
-    "really cringe",
+    "kind of cheesy",
 
   ];
   textThreeList: string[] = [
