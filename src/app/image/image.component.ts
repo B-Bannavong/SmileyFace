@@ -43,7 +43,7 @@ export class ImageComponent {
   textThreeList: string[] = [
     "hurts...",
     "next time I can see you...",
-    "I've ever met...",
+    "I know...",
     "of you...",
     "at pool...",
     "but..."
